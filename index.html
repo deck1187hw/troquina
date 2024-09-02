@@ -9,16 +9,15 @@
     <meta name="author" content="Troquiña S.L.">
     <meta property="og:title" content="Troquiña S.L. - Jardinería y Paisajismo en Pontevedra">
     <meta property="og:description" content="Troquiña S.L. ofrece servicios de jardinería, paisajismo, mantenimiento de jardines, y vivero de plantas en Pontevedra, Galicia. Expertos desde 1994.">
-    <meta property="og:image" content="https://troquiña.com/logo.png"> <!-- Replace with the actual URL of your logo or main image -->
-    <meta property="og:url" content="https://troquiña.com"> <!-- Replace with your actual website URL -->
+    <meta property="og:image" content="https://troquiña.com/logo.png">
+    <meta property="og:url" content="https://troquiña.com">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Troquiña S.L. - Jardinería y Paisajismo en Pontevedra">
     <meta name="twitter:description" content="Troquiña S.L. ofrece servicios de jardinería, paisajismo, mantenimiento de jardines, y vivero de plantas en Pontevedra, Galicia. Expertos desde 1994.">
-    <meta name="twitter:image" content="https://troquiña.com/logo.png"> <!-- Replace with the actual URL of your logo or main image -->
+    <meta name="twitter:image" content="https://troquiña.com/logo.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Custom colors */
         :root {
             --primary-color: #336666;
             --secondary-color: #cc3300;
@@ -33,58 +32,74 @@
 </head>
 <body class="font-sans leading-normal tracking-normal bg-gray-100">
 
-    <!-- Header Section -->
-    <header class="text-white bg-white p-3">
-        <div class="container mx-auto text-center bg-white w-full pt-4">
-            <a href="https://www.google.com/maps/search/TROQUI%C3%91A/@42.5782051,-8.7697183,14z?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D"><img src="logo.png" alt="Troquiña S.L." width="340" class="mx-auto"></a>
-            <p class="">Expertos en Jardinería y Paisajismo desde 1994</p>
-        </div>
-    </header>
-
-    <!-- Main Image -->
-    <div class="w-full h-96 bg-cover bg-center" style="background-image: url('garden.jpg');"></div>
-
-    <!-- About Section -->
-    <section class="container mx-auto p-6 bg-white mt-6">
-        <h2 class="text-3xl font-bold text-primary mb-4">Sobre Nosotros</h2>
-        <p>Troquiña S.L. es una empresa de servicios creada en el año 1994, especializada en jardinería y paisajismo. Contamos con una plantilla cualificada y formada para cada una de las actividades.</p>
-    </section>
-
-    <!-- Services Section -->
-    <section class="container mx-auto p-6 bg-white mt-6">
-        <h2 class="text-3xl font-bold text-primary mb-4">Nuestros Servicios</h2>
-        <ul class="list-disc pl-5">
-            <li>Jardinería</li>
-            <li>Paisajismo</li>
-            <li>Mantenimiento de jardines</li>
-            <li>Vivero de plantas y flores</li>
-            <li>Árboles, plantas ornamentales y frutales</li>
-            <li>Nutrición animal y abonos</li>
-            <li>Accesorios de jardinería (macetas, jardineras, adornos)</li>
-        </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="container mx-auto p-6 bg-white mt-6 mb-6">
-        <h2 class="text-3xl font-bold text-primary mb-4">Contacto</h2>
-        <div class="mb-4">
-            <h3 class="text-xl font-bold">Localización 1</h3>
-            <p><strong>Dirección:</strong> <a href="https://maps.app.goo.gl/VQpjgd8b4exkkB3C9">Sestelo, 21, 36614 Baión (San Xoán), Pontevedra, España</a></p>
-            <p><strong>Teléfono:</strong> +34 986 908 114</p>
-        </div>
+<!-- Navigation Bar -->
+<nav class="bg-primary text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <a href="#home" class="text-lg font-bold">Troquiña S.L.</a>
         <div>
-            <h3 class="text-xl font-bold">Localización 2</h3>
-            <p><strong>Dirección:</strong> <a href="https://maps.app.goo.gl/8rxxmW3hG8A4PZvz7">Rúa Abaixo, 21, 36613 Trabanca Badiña, Pontevedra, España</a></p>
-            <p><strong>Teléfono:</strong> +34 986 508 737</p>
+            <a href="#about" class="px-3">Sobre Nosotros</a>
+            <a href="#services" class="px-3">Servicios</a>
+            <a href="#contact" class="px-3">Contacto</a>
         </div>
-        <p class="mt-4"><strong>Zonas de servicio:</strong> Galicia</p>
-        <p><strong>Horario:</strong> <a href="https://www.google.com/maps/search/TROQUI%C3%91A/@42.5782051,-8.7697183,14z?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D" class="text-secondary">Ver horarios actualizados</a></p>
-        <p><strong>Provincia:</strong> Pontevedra</p>
-    </section>
+    </div>
+</nav>
 
-    <footer class="bg-primary text-white text-center p-4">
-        <p>&copy; 2024 Troquiña S.L. Todos los derechos reservados.</p>
-    </footer>
+<!-- Header Section -->
+<header id="home" class="text-white bg-cover bg-center h-96" style="background-image: url('garden.jpg');">
+    <div class="container mx-auto text-center pt-32">
+        <h1 class="text-5xl font-bold">Bienvenido a Troquiña S.L.</h1>
+        <p class="mt-4 text-xl">Expertos en Jardinería y Paisajismo desde 1994</p>
+    </div>
+</header>
+
+<!-- About Section -->
+<section id="about" class="container mx-auto p-6 bg-white mt-6">
+    <h2 class="text-3xl font-bold text-primary mb-4">Sobre Nosotros</h2>
+    <p>Troquiña S.L. es una empresa de servicios creada en el año 1994, especializada en jardinería y paisajismo. Contamos con una plantilla cualificada y formada para cada una de las actividades.</p>
+</section>
+
+<!-- Services Section -->
+<section id="services" class="container mx-auto p-6 bg-white mt-6">
+    <h2 class="text-3xl font-bold text-primary mb-4">Nuestros Servicios</h2>
+    <ul class="list-disc pl-5">
+        <li>Jardinería</li>
+        <li>Paisajismo</li>
+        <li>Mantenimiento de jardines</li>
+        <li>Vivero de plantas y flores</li>
+        <li>Árboles, plantas ornamentales y frutales</li>
+        <li>Nutrición animal y abonos</li>
+        <li>Accesorios de jardinería (macetas, jardineras, adornos)</li>
+    </ul>
+</section>
+
+<!-- Testimonials Section -->
+<section class="container mx-auto p-6 bg-gray-200 mt-6">
+    <h2 class="text-3xl font-bold text-primary mb-4">Testimonios</h2>
+    <p>"Excelente servicio y atención al cliente. Mi jardín nunca ha lucido mejor!" - Cliente Satisfecho</p>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="container mx-auto p-6 bg-white mt-6 mb-6">
+    <h2 class="text-3xl font-bold text-primary mb-4">Contacto</h2>
+    <div class="mb-4">
+        <h3 class="text-xl font-bold">Localización 1</h3>
+        <p><strong>Dirección:</strong> <a href="https://maps.app.goo.gl/VQpjgd8b4exkkB3C9">Sestelo, 21, 36614 Baión (San Xoán), Pontevedra, España</a></p>
+        <p><strong>Teléfono:</strong> +34 986 908 114</p>
+    </div>
+    <div>
+        <h3 class="text-xl font-bold">Localización 2</h3>
+        <p><strong>Dirección:</strong> <a href="https://maps.app.goo.gl/8rxxmW3hG8A4PZvz7">Rúa Abaixo, 21, 36613 Trabanca Badiña, Pontevedra, España</a></p>
+        <p><strong>Teléfono:</strong> +34 986 508 737</p>
+    </div>
+    <p class="mt-4"><strong>Zonas de servicio:</strong> Galicia</p>
+    <p><strong>Horario:</strong> <a href="https://www.google.com/maps/search/TROQUI%C3%91A/@42.5782051,-8.7697183,14z?entry=ttu&g_ep=EgoyMDI0MDgyOC4wIKXMDSoASAFQAw%3D%3D" class="text-secondary">Ver horarios actualizados</a></p>
+    <p><strong>Provincia:</strong> Pontevedra</p>
+</section>
+
+<!-- Footer -->
+<footer class="bg-primary text-white text-center p-4">
+    <p>&copy; 2024 Troquiña S.L. Todos los derechos reservados.</p>
+</footer>
 
 </body>
 </html>
