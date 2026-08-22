@@ -98,16 +98,36 @@ One accent only. Terracotta is reserved for things the visitor can act on, so
 
 ### 3.5 Content architecture (single page, in order)
 
-1. **Hero** — who, where, since when + quote CTA + phone.
-2. **Trust strip** — 1994 · two centres · own nursery · all of Galicia.
-3. **Services** — six named blocks drawn from the real activity list.
-4. **Nursery** — the garden centre, what's on the tables, photo band.
-5. **How we work** — visit → proposal → execution → maintenance. Removes the "what does
-   asking for a quote commit me to" friction.
-6. **About** — 1994, qualified and trained staff, the two sites.
-7. **Locations** — both addresses as first-class cards with map, phone, directions.
-8. **Contact** — form plus direct phone/WhatsApp/email.
-9. **Footer** — Instagram, legal line.
+1. **Hero** — who, where, since when + contact CTA + phone.
+2. **Trust strip** — 1994 · two centres · 30+ years · all of Galicia.
+3. **Services** — six blocks, each one an activity the business is actually listed as
+   doing.
+4. **Nursery** — what is on the tables at the two centres, photo band.
+5. **About** — 1994, qualified and trained staff, the two sites.
+6. **Locations** — both addresses as first-class cards with map, phone, directions.
+7. **Contact** — form plus direct phone lines and Instagram.
+8. **Footer** — Instagram, CIF, legal line.
+
+### 3.5.1 Sourcing rule — no invented copy
+
+Every factual claim on the page traces to something Troquiña or a public register
+states. The service list, the nursery product list, the founding year and the
+"plantilla cualificada y formada para cada una de las actividades" line all come from
+the company's own description and its directory entries; the CIF and legal form come
+from the mercantile register.
+
+Deliberately **not** on the page, because nothing verifiable was found:
+
+| Omitted | Why |
+| --- | --- |
+| Opening hours | Not published anywhere current. Linked to Google Maps instead, so they can never go stale on us. |
+| A "how we work" / process section | An earlier draft invented a four-step visit → quote → work → upkeep flow. Removed — the owners should describe their real process. |
+| Client types (communities, businesses) | Plausible but unverified. |
+| Team size, project counts, testimonials | Employee count appears in the register but changes yearly; not worth hard-coding. |
+| Specific techniques, species, plant ranges | Not documented publicly. |
+
+If the owners supply any of the above, it belongs on the page — but it has to come from
+them, not from inference.
 
 ### 3.6 Languages
 

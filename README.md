@@ -12,8 +12,24 @@ Trilingual: **Spanish (default) · Galego · English**.
 | File | Purpose |
 | --- | --- |
 | `index.html` | The entire site — markup, CSS and JS in one file. No build step. |
-| `DESIGN.md` | Design command: competitive read, palette, type, content architecture. |
-| `logo.png`, `garden.jpg`, `img/*.jpg` | Image assets. |
+| `DESIGN.md` | Design command: competitive read, palette, type, content architecture, and the sourcing rule for copy. |
+| `sitemap.xml`, `robots.txt` | Search engine discovery, with hreflang alternates. |
+| `_headers` | Netlify cache and security headers. |
+| `img/opt/*` | Generated responsive WebP + the social share card. Do not edit by hand. |
+| `garden.jpg`, `img/garden*.jpg`, `logo.png` | Original source images. |
+
+### Regenerating the optimised images
+
+`img/opt/` is generated from the originals with [sharp](https://sharp.pixelplumbing.com/).
+Only needed if a source image changes:
+
+```sh
+npm i sharp
+node tools/optimise-images.mjs
+```
+
+Mobile currently loads **92 KB** in total; the hero is served as a 39 KB WebP at
+phone width instead of the original 498 KB JPEG.
 
 ## Running locally
 

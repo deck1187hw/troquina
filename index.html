@@ -5,10 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Troquiña S.L. — Jardinería, paisajismo y vivero en Pontevedra</title>
 
-<meta name="description" data-i18n-content="meta.description" content="Jardinería, paisajismo, mantenimiento de jardines y vivero de plantas en Baión y Trabanca Badiña (Pontevedra). Equipo cualificado desde 1994.">
+<meta name="description" data-i18n-content="meta.description" content="Jardinería, paisajismo, mantenimiento de jardines y vivero de plantas en Baión y Trabanca Badiña (Pontevedra). Empresa de servicios creada en 1994.">
 <meta name="author" content="Troquiña S.L.">
 <meta name="theme-color" content="#1E3A32">
-<link rel="canonical" href="https://www.xn--troquia-9za.com/">
+<meta name="robots" content="index,follow,max-image-preview:large">
+
+<link rel="canonical" href="https://www.xn--troquia-9za.com/" id="canonical">
 <link rel="alternate" hreflang="es" href="https://www.xn--troquia-9za.com/?lang=es">
 <link rel="alternate" hreflang="gl" href="https://www.xn--troquia-9za.com/?lang=gl">
 <link rel="alternate" hreflang="en" href="https://www.xn--troquia-9za.com/?lang=en">
@@ -16,21 +18,28 @@
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Troquiña S.L.">
-<meta property="og:url" content="https://www.xn--troquia-9za.com/">
+<meta property="og:url" content="https://www.xn--troquia-9za.com/" id="ogurl">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" data-i18n-content="meta.title" content="Troquiña S.L. — Jardinería, paisajismo y vivero en Pontevedra">
-<meta property="og:description" data-i18n-content="meta.description" content="Jardinería, paisajismo, mantenimiento de jardines y vivero de plantas en Baión y Trabanca Badiña (Pontevedra). Equipo cualificado desde 1994.">
-<meta property="og:image" content="https://www.xn--troquia-9za.com/garden.jpg">
+<meta property="og:description" data-i18n-content="meta.description" content="Jardinería, paisajismo, mantenimiento de jardines y vivero de plantas en Baión y Trabanca Badiña (Pontevedra). Empresa de servicios creada en 1994.">
+<meta property="og:image" content="https://www.xn--troquia-9za.com/img/opt/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" data-i18n-content="meta.ogalt" content="Trabajos de jardinería y vivero de Troquiña S.L.">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" data-i18n-content="meta.title" content="Troquiña S.L. — Jardinería, paisajismo y vivero en Pontevedra">
-<meta name="twitter:description" data-i18n-content="meta.description" content="Jardinería, paisajismo, mantenimiento de jardines y vivero de plantas en Baión y Trabanca Badiña (Pontevedra). Equipo cualificado desde 1994.">
-<meta name="twitter:image" content="https://www.xn--troquia-9za.com/garden.jpg">
+<meta name="twitter:description" data-i18n-content="meta.description" content="Jardinería, paisajismo, mantenimiento de jardines y vivero de plantas en Baión y Trabanca Badiña (Pontevedra). Empresa de servicios creada en 1994.">
+<meta name="twitter:image" content="https://www.xn--troquia-9za.com/img/opt/og-card.jpg">
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%231E3A32'/%3E%3Cpath d='M16 26V13' stroke='%238FA98E' stroke-width='2.2' stroke-linecap='round'/%3E%3Cpath d='M16 16c0-5 3.5-9 8.5-9.5C25 12 21.5 16.5 16 16Z' fill='%23C1502E'/%3E%3Cpath d='M15.5 20c-4 0-7-2.5-7.5-6.5 4.5-.5 7.5 2.5 7.5 6.5Z' fill='%238FA98E'/%3E%3C/svg%3E">
 <link rel="apple-touch-icon" href="logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="image" type="image/webp"
+      href="img/opt/hero-1024.webp"
+      imagesrcset="img/opt/hero-640.webp 640w, img/opt/hero-1024.webp 1024w, img/opt/hero-1600.webp 1600w, img/opt/hero-1920.webp 1920w"
+      imagesizes="100vw" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -163,7 +172,7 @@ ul{margin:0}
 .nav.open .burger span:nth-child(2){opacity:0}
 .nav.open .burger span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 
-@media (max-width:1180px){
+@media (max-width:1000px){
   .burger{display:flex}
   .nav-links{
     position:absolute;top:100%;left:var(--pad);right:var(--pad);
@@ -190,16 +199,20 @@ ul{margin:0}
   position:relative;min-height:min(94vh,820px);display:flex;align-items:flex-end;
   padding:9rem 0 clamp(2.5rem,6vw,4.5rem);color:#fff;overflow:hidden;
 }
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero picture{position:absolute;inset:0;z-index:0}
+.hero-bg{width:100%;height:100%;object-fit:cover}
+/* Scrim strength is an accessibility control, not decoration: the hero text
+   must clear 4.5:1 over every part of the photograph. Verified per element. */
 .hero::after{
   content:"";position:absolute;inset:0;z-index:1;
   background:
-    linear-gradient(180deg,rgba(18,33,28,.72) 0%,rgba(18,33,28,.30) 34%,rgba(18,33,28,.86) 100%),
-    linear-gradient(75deg,rgba(30,58,50,.78) 0%,rgba(30,58,50,0) 62%);
+    linear-gradient(180deg,rgba(18,33,28,.75) 0%,rgba(18,33,28,.34) 28%,rgba(18,33,28,.82) 62%,rgba(18,33,28,.93) 100%),
+    linear-gradient(75deg,rgba(30,58,50,.80) 0%,rgba(30,58,50,0) 62%);
 }
 .hero-in{position:relative;z-index:2}
-.hero .eyebrow{color:var(--sage)}
-.hero .eyebrow::before{background:var(--sage)}
+.hero .eyebrow{color:#F0F5EF}
+.hero .eyebrow::before{background:#F0F5EF}
+.hero .eyebrow,.hero h1,.hero p,.hero-phone{text-shadow:0 1px 14px rgba(18,33,28,.5)}
 .hero h1{
   font-size:clamp(2.6rem,1.5rem + 5.4vw,5.1rem);
   max-width:15ch;letter-spacing:-.028em;text-wrap:balance;
@@ -225,19 +238,17 @@ section{scroll-margin-top:76px}
 .band-sand{background:var(--sand)}
 .sec-head{margin-bottom:clamp(2.25rem,4vw,3.25rem)}
 
-/* services */
 .cards{display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(285px,1fr))}
 .card{
   background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
   padding:clamp(1.5rem,2.4vw,2rem);transition:border-color .25s,transform .25s,background-color .25s;
 }
-.band-sand .card{background:#fff8}
 .card:hover{border-color:var(--sage);transform:translateY(-3px);background:#fff}
 .card svg{width:30px;height:30px;color:var(--moss);margin-bottom:1.1rem}
 .card h3{font-size:1.28rem;color:var(--pine);margin-bottom:.55rem}
 .card p{color:var(--muted);font-size:.955rem}
 
-/* nursery: text + photo collage */
+/* nursery */
 .split{display:grid;gap:clamp(2rem,5vw,4rem);align-items:center;grid-template-columns:1fr}
 @media (min-width:900px){.split{grid-template-columns:1fr 1fr}}
 .ticks{list-style:none;padding:0;margin:2rem 0 0;display:grid;gap:.85rem}
@@ -247,25 +258,14 @@ section{scroll-margin-top:76px}
   background:var(--sage) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/12px no-repeat;
 }
 .collage{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
-.collage img{border-radius:var(--radius);width:100%;height:100%;object-fit:cover}
+.collage picture{display:block;border-radius:var(--radius);overflow:hidden;background:var(--line)}
+.collage img{width:100%;height:100%;object-fit:cover}
 .collage .tall{grid-row:span 2;aspect-ratio:3/4.1}
 .collage .small{aspect-ratio:4/3}
-
-/* process */
-.steps{counter-reset:s;display:grid;gap:1.1rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));list-style:none;padding:0}
-.steps li{position:relative;padding-top:2.9rem;border-top:1.5px solid var(--line)}
-.steps li::before{
-  counter-increment:s;content:"0" counter(s);
-  position:absolute;top:1.1rem;left:0;
-  font-family:var(--display);font-size:.95rem;font-weight:600;letter-spacing:.06em;color:var(--clay-deep);
-}
-.steps h3{font-size:1.18rem;color:var(--pine);margin-bottom:.45rem}
-.steps p{color:var(--muted);font-size:.945rem}
 
 /* about */
 .about-copy p + p{margin-top:1.1rem}
 .about-copy{color:var(--muted)}
-.about-copy strong{color:var(--pine);font-weight:600}
 .logo-plate{
   background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
   padding:clamp(1.75rem,4vw,2.75rem);display:grid;gap:1.5rem;justify-items:center;text-align:center;
@@ -297,7 +297,7 @@ section{scroll-margin-top:76px}
 .field{display:grid;gap:.4rem}
 .field label{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
 .field input,.field textarea{
-  font:inherit;font-size:.98rem;color:#fff;background:rgba(255,255,255,.07);
+  font:inherit;font-size:1rem;color:#fff;background:rgba(255,255,255,.07);
   border:1px solid rgba(255,255,255,.24);border-radius:12px;padding:.8rem .95rem;width:100%;
   transition:border-color .2s,background-color .2s;
 }
@@ -323,7 +323,7 @@ section{scroll-margin-top:76px}
   padding-bottom:1.75rem;border-bottom:1px solid rgba(255,255,255,.12)}
 .foot .brand{color:#fff}
 .foot-tag{margin-top:.4rem}
-.foot-social{display:flex;gap:.6rem;align-items:center}
+.foot-social{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
 .foot-social a{
   display:inline-flex;align-items:center;gap:.5rem;color:#fff;text-decoration:none;
   border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:.55rem 1.05rem;font-size:.85rem;font-weight:500;
@@ -359,7 +359,6 @@ section{scroll-margin-top:76px}
     <ul class="nav-links" id="navlinks">
       <li><a href="#services" data-i18n="nav.services">Servicios</a></li>
       <li><a href="#nursery" data-i18n="nav.nursery">Vivero</a></li>
-      <li><a href="#process" data-i18n="nav.process">Cómo trabajamos</a></li>
       <li><a href="#about" data-i18n="nav.about">Nosotros</a></li>
       <li><a href="#locations" data-i18n="nav.locations">Dónde estamos</a></li>
       <li><a href="#contact" data-i18n="nav.contact">Contacto</a></li>
@@ -371,7 +370,7 @@ section{scroll-margin-top:76px}
         <button type="button" data-lang="gl" lang="gl">GL</button>
         <button type="button" data-lang="en" lang="en">EN</button>
       </div>
-      <a class="btn btn-ghost btn-sm btn-nav" href="#contact" data-i18n="nav.cta">Pedir presupuesto</a>
+      <a class="btn btn-ghost btn-sm btn-nav" href="#contact" data-i18n="nav.cta">Contacto</a>
       <button class="burger" id="burger" type="button" aria-expanded="false" aria-controls="navlinks" data-i18n-aria-label="a11y.menu" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
@@ -384,13 +383,17 @@ section{scroll-margin-top:76px}
 
 <!-- ================= HERO ================= -->
 <header class="hero">
-  <img class="hero-bg" src="garden.jpg" alt="" fetchpriority="high" width="1920" height="1280">
+  <picture>
+    <source type="image/webp" sizes="100vw"
+            srcset="img/opt/hero-640.webp 640w, img/opt/hero-1024.webp 1024w, img/opt/hero-1600.webp 1600w, img/opt/hero-1920.webp 1920w">
+    <img class="hero-bg" src="img/opt/hero-1600.jpg" alt="" fetchpriority="high" width="1920" height="1280">
+  </picture>
   <div class="wrap hero-in">
     <p class="eyebrow" data-i18n="hero.eyebrow">Baión · Trabanca Badiña · Pontevedra</p>
     <h1 data-i18n="hero.title">Jardines que crecen con el tiempo</h1>
-    <p data-i18n="hero.lead">Jardinería, paisajismo y mantenimiento en Galicia desde 1994, con vivero propio y un equipo formado para cada trabajo.</p>
+    <p data-i18n="hero.lead">Jardinería, paisajismo y mantenimiento de jardines en Galicia desde 1994, con vivero propio en nuestros dos centros de O Salnés.</p>
     <div class="hero-cta">
-      <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Pedir presupuesto</a>
+      <a class="btn btn-primary" href="#contact" data-i18n="hero.cta1">Contactar</a>
       <a class="btn btn-ghost" href="#services" data-i18n="hero.cta2">Ver servicios</a>
       <a class="hero-phone" href="tel:+34986908114">
         <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
@@ -403,9 +406,9 @@ section{scroll-margin-top:76px}
 <!-- ================= STATS ================= -->
 <section class="stats" aria-label="Troquiña S.L.">
   <ul class="wrap">
-    <li><b>1994</b><span data-i18n="stat.1">Fundada en O Salnés</span></li>
-    <li><b>2</b><span data-i18n="stat.2">Centros con vivero y venta al público</span></li>
-    <li><b>30+</b><span data-i18n="stat.3">Años trabajando zonas verdes</span></li>
+    <li><b>1994</b><span data-i18n="stat.1">Año de creación de la empresa</span></li>
+    <li><b>2</b><span data-i18n="stat.2">Centros: Baión y Trabanca Badiña</span></li>
+    <li><b>+30</b><span data-i18n="stat.3">Años dedicados a la jardinería y el paisajismo</span></li>
     <li><b>Galicia</b><span data-i18n="stat.4">Zona de servicio</span></li>
   </ul>
 </section>
@@ -416,39 +419,39 @@ section{scroll-margin-top:76px}
     <div class="sec-head rv">
       <p class="eyebrow" data-i18n="services.eyebrow">Qué hacemos</p>
       <h2 class="h2" data-i18n="services.title">Servicios</h2>
-      <p class="lead" data-i18n="services.lead">Todo lo que necesita un jardín, desde la primera idea hasta el mantenimiento de cada temporada.</p>
+      <p class="lead" data-i18n="services.lead">Somos una empresa de servicios especializada en jardinería y paisajismo, con vivero propio.</p>
     </div>
 
     <div class="cards">
       <article class="card rv">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V12"/><path d="M12 12c0-5 3.5-8.5 9-9 .3 5.5-3.5 9-9 9Z"/><path d="M11.4 17C7 17 3.6 14.4 3 10c4.9-.5 8.4 2.6 8.4 7Z"/></svg>
         <h3 data-i18n="s1.t">Jardinería</h3>
-        <p data-i18n="s1.d">Plantación, césped, setos y cierres vegetales. Ejecutamos el jardín completo o el trabajo puntual que necesites.</p>
+        <p data-i18n="s1.d">La actividad principal de la empresa desde 1994, junto con el paisajismo.</p>
       </article>
       <article class="card rv">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 20h18"/><path d="M3 20V9l6-4 6 4"/><path d="M15 20V6l6 3v11"/><path d="M8 20v-5h3v5"/></svg>
         <h3 data-i18n="s2.t">Paisajismo</h3>
-        <p data-i18n="s2.d">Diseñamos el espacio antes de tocarlo: recorridos, volúmenes, especies y cómo se verá dentro de cinco años.</p>
+        <p data-i18n="s2.d">Diseño de espacios verdes. Nuestra especialidad, junto con la jardinería, desde el primer día.</p>
       </article>
       <article class="card rv">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88"/><path d="M14.47 14.48 20 20"/><path d="M8.12 8.12 12 12"/></svg>
-        <h3 data-i18n="s3.t">Mantenimiento</h3>
-        <p data-i18n="s3.d">Siega, poda, desbroce, abonado y limpieza con visitas periódicas. Para particulares, comunidades y empresas.</p>
+        <h3 data-i18n="s3.t">Mantenimiento de jardines</h3>
+        <p data-i18n="s3.d">Cuidado continuado de jardines y zonas verdes.</p>
       </article>
       <article class="card rv">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 10a4 4 0 1 1 4 4h-4Z"/><path d="M12 10a4 4 0 1 0-4 4h4Z"/><path d="M12 10a4 4 0 1 0 4-4h-4Z"/><path d="M12 10a4 4 0 1 1-4-4h4Z"/><path d="M12 14v8"/></svg>
         <h3 data-i18n="s4.t">Vivero de plantas y flores</h3>
-        <p data-i18n="s4.d">Planta de temporada, interior y exterior, seleccionada para el clima de las Rías Baixas.</p>
+        <p data-i18n="s4.d">Vivero propio de plantas y flores en nuestros dos centros.</p>
       </article>
       <article class="card rv">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22v-6"/><path d="M12 16a6 6 0 0 0 6-6c0-4-3-8-6-8s-6 4-6 8a6 6 0 0 0 6 6Z"/><path d="M12 2v14"/></svg>
-        <h3 data-i18n="s5.t">Árboles y frutales</h3>
-        <p data-i18n="s5.d">Árboles, plantas ornamentales y frutales, con el consejo de quien sabe dónde y cómo plantarlos.</p>
+        <h3 data-i18n="s5.t">Árboles y plantas</h3>
+        <p data-i18n="s5.d">Árboles, plantas ornamentales, hortícolas y frutales.</p>
       </article>
       <article class="card rv">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21h16"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg>
-        <h3 data-i18n="s6.t">Abonos y nutrición animal</h3>
-        <p data-i18n="s6.d">Sustratos, abonos y productos de nutrición animal para el jardín, la huerta y la finca.</p>
+        <h3 data-i18n="s6.t">Nutrición animal y abonos</h3>
+        <p data-i18n="s6.d">Abonos para el jardín y la huerta, y productos de nutrición animal.</p>
       </article>
     </div>
   </div>
@@ -459,69 +462,61 @@ section{scroll-margin-top:76px}
   <div class="wrap split">
     <div class="rv">
       <p class="eyebrow" data-i18n="nursery.eyebrow">El vivero</p>
-      <h2 class="h2" data-i18n="nursery.title">Dos centros abiertos al público</h2>
-      <p class="lead" data-i18n="nursery.lead">No sólo trabajamos en jardines: puedes venir a por la planta, el sustrato o la maceta. En Baión y en Trabanca Badiña encontrarás:</p>
+      <h2 class="h2" data-i18n="nursery.title">Plantas, árboles y todo para el jardín</h2>
+      <p class="lead" data-i18n="nursery.lead">Además de los trabajos de jardinería, en nuestros dos centros de Baión y Trabanca Badiña encontrarás:</p>
       <ul class="ticks">
-        <li data-i18n="n.1">Planta de temporada, interior y exterior</li>
-        <li data-i18n="n.2">Árboles ornamentales y frutales</li>
-        <li data-i18n="n.3">Sustratos, abonos y fitosanitarios</li>
-        <li data-i18n="n.4">Nutrición animal</li>
-        <li data-i18n="n.5">Macetas, jardineras y adornos</li>
-        <li data-i18n="n.6">El consejo de quien planta todos los días</li>
+        <li data-i18n="n.1">Plantas y flores</li>
+        <li data-i18n="n.2">Árboles y plantas ornamentales</li>
+        <li data-i18n="n.3">Plantas hortícolas y frutales</li>
+        <li data-i18n="n.4">Abonos</li>
+        <li data-i18n="n.5">Nutrición animal</li>
+        <li data-i18n="n.6">Macetas, jardineras y artículos de decoración</li>
       </ul>
       <p style="margin-top:2rem">
         <a class="btn btn-outline" href="#locations" data-i18n="nursery.cta">Ver las dos direcciones</a>
       </p>
     </div>
     <div class="collage rv">
-      <img class="tall" src="img/garden3.jpg" alt="" data-i18n-alt="alt.nursery1" loading="lazy" width="640" height="427">
-      <img class="small" src="img/garden1.jpg" alt="" data-i18n-alt="alt.nursery2" loading="lazy" width="640" height="427">
-      <img class="small" src="img/garden2.jpg" alt="" data-i18n-alt="alt.nursery3" loading="lazy" width="640" height="480">
+      <picture class="tall">
+        <source type="image/webp" srcset="img/opt/garden3.webp">
+        <img src="img/garden3.jpg" alt="" data-i18n-alt="alt.nursery1" loading="lazy" width="640" height="427">
+      </picture>
+      <picture class="small">
+        <source type="image/webp" srcset="img/opt/garden1.webp">
+        <img src="img/garden1.jpg" alt="" data-i18n-alt="alt.nursery2" loading="lazy" width="640" height="427">
+      </picture>
+      <picture class="small">
+        <source type="image/webp" srcset="img/opt/garden2.webp">
+        <img src="img/garden2.jpg" alt="" data-i18n-alt="alt.nursery3" loading="lazy" width="640" height="480">
+      </picture>
     </div>
-  </div>
-</section>
-
-<!-- ================= PROCESS ================= -->
-<section class="band" id="process">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <p class="eyebrow" data-i18n="process.eyebrow">Cómo trabajamos</p>
-      <h2 class="h2" data-i18n="process.title">Cuatro pasos, sin sorpresas</h2>
-    </div>
-    <ol class="steps">
-      <li class="rv"><h3 data-i18n="p1.t">Visita</h3><p data-i18n="p1.d">Vamos a ver el terreno, escuchamos qué quieres y cuánto tiempo tienes para cuidarlo.</p></li>
-      <li class="rv"><h3 data-i18n="p2.t">Propuesta y presupuesto</h3><p data-i18n="p2.d">Te contamos qué se puede hacer, con qué plantas y a qué precio. Sin compromiso.</p></li>
-      <li class="rv"><h3 data-i18n="p3.t">Ejecución</h3><p data-i18n="p3.d">Trabaja nuestro equipo, con planta de nuestro vivero y plazos acordados.</p></li>
-      <li class="rv"><h3 data-i18n="p4.t">Mantenimiento</h3><p data-i18n="p4.d">Si quieres, seguimos: visitas periódicas para que el jardín siga como el primer día.</p></li>
-    </ol>
   </div>
 </section>
 
 <!-- ================= ABOUT ================= -->
-<section class="band band-sand" id="about">
+<section class="band" id="about">
   <div class="wrap split">
     <figure class="logo-plate rv" style="margin:0">
-      <img src="logo.png" alt="Troquiña S.L." width="1036" height="206">
+      <img src="logo.png" alt="Troquiña S.L." width="1036" height="206" loading="lazy">
       <figcaption data-i18n="about.caption">Jardinería y paisajismo · O Salnés, Pontevedra</figcaption>
     </figure>
     <div class="rv">
       <p class="eyebrow" data-i18n="about.eyebrow">Nosotros</p>
-      <h2 class="h2" data-i18n="about.title">Más de treinta años en O Salnés</h2>
+      <h2 class="h2" data-i18n="about.title">Una empresa de servicios desde 1994</h2>
       <div class="about-copy" style="margin-top:1.4rem">
-        <p data-i18n="about.p1">Troquiña S.L. es una empresa de servicios creada en 1994 y especializada en jardinería y paisajismo. Desde entonces hemos crecido despacio, como crecen los jardines: aprendiendo qué funciona en este clima y qué no.</p>
-        <p data-i18n="about.p2">Contamos con una plantilla cualificada y formada para cada una de las actividades, y con vivero propio, lo que nos permite elegir la planta antes de plantarla y responder por ella después.</p>
-        <p data-i18n="about.p3">Trabajamos para particulares, comunidades de vecinos y empresas en toda Galicia, con base en la comarca de O Salnés.</p>
+        <p data-i18n="about.p1">Troquiña S.L. es una empresa de servicios creada en el año 1994, especializada en jardinería y paisajismo. Contamos con una plantilla cualificada y formada para cada una de las actividades.</p>
+        <p data-i18n="about.p2">Trabajamos en toda Galicia desde nuestros dos centros de la comarca de O Salnés: Baión, en Vilanova de Arousa, y Trabanca Badiña, en Vilagarcía de Arousa.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= LOCATIONS ================= -->
-<section class="band" id="locations">
+<section class="band band-sand" id="locations">
   <div class="wrap">
     <div class="sec-head rv">
       <p class="eyebrow" data-i18n="locations.eyebrow">Dónde estamos</p>
-      <h2 class="h2" data-i18n="locations.title">Dos centros, la misma casa</h2>
+      <h2 class="h2" data-i18n="locations.title">Dos centros en O Salnés</h2>
     </div>
     <div class="places">
       <article class="place rv">
@@ -553,8 +548,8 @@ section{scroll-margin-top:76px}
   <div class="wrap split" style="align-items:start">
     <div class="rv">
       <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
-      <h2 class="h2" data-i18n="contact.title">Cuéntanos qué jardín tienes en la cabeza</h2>
-      <p class="lead" data-i18n="contact.lead">Escríbenos o llámanos. Te respondemos con una propuesta y un presupuesto sin compromiso.</p>
+      <h2 class="h2" data-i18n="contact.title">¿Hablamos de tu jardín?</h2>
+      <p class="lead" data-i18n="contact.lead">Cuéntanos qué necesitas y te respondemos lo antes posible.</p>
 
       <form class="form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin-top:2rem">
         <input type="hidden" name="form-name" value="contacto">
@@ -575,7 +570,7 @@ section{scroll-margin-top:76px}
         </p>
         <p class="field" style="margin:0">
           <label for="f-msg" data-i18n="form.msg">¿Qué necesitas?</label>
-          <textarea id="f-msg" name="mensaje" required data-i18n-placeholder="form.msgph" placeholder="Un jardín nuevo, mantenimiento, una poda, una duda sobre una planta…"></textarea>
+          <textarea id="f-msg" name="mensaje" required data-i18n-placeholder="form.msgph" placeholder="Cuéntanos brevemente qué necesitas…"></textarea>
         </p>
         <p style="margin:0"><button class="btn btn-primary" type="submit" data-i18n="form.send">Enviar</button></p>
         <p class="form-note" data-i18n="form.privacy">Al enviar aceptas que usemos tus datos únicamente para responderte.</p>
@@ -594,7 +589,7 @@ section{scroll-margin-top:76px}
       </a>
       <a href="https://www.instagram.com/troquinha_sl/" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
-        <span><b>@troquinha_sl</b><small data-i18n="direct.ig">Nuestros trabajos, en Instagram</small></span>
+        <span><b>@troquinha_sl</b><small data-i18n="direct.ig">Instagram</small></span>
       </a>
     </div>
   </div>
@@ -617,7 +612,7 @@ section{scroll-margin-top:76px}
       </div>
     </div>
     <div class="foot-bot">
-      <p>&copy; <span id="year">2026</span> Troquiña S.L. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
+      <p>&copy; <span id="year">2026</span> Troquiña S.L. · CIF B36268217. <span data-i18n="footer.rights">Todos los derechos reservados.</span></p>
       <p>Sestelo 21, Baión · Rúa Abaixo 21, Trabanca Badiña · Pontevedra</p>
     </div>
   </div>
@@ -631,20 +626,38 @@ section{scroll-margin-top:76px}
       "@type":"Organization",
       "@id":"https://www.xn--troquia-9za.com/#org",
       "name":"Troquiña S.L.",
+      "legalName":"Troquiña, S.L.",
       "url":"https://www.xn--troquia-9za.com/",
       "logo":"https://www.xn--troquia-9za.com/logo.png",
+      "image":"https://www.xn--troquia-9za.com/img/opt/og-card.jpg",
       "foundingDate":"1994",
+      "vatID":"ESB36268217",
+      "description":"Empresa de servicios creada en 1994, especializada en jardinería y paisajismo, con vivero de plantas y flores en Baión y Trabanca Badiña (Pontevedra).",
       "sameAs":["https://www.instagram.com/troquinha_sl/"],
-      "areaServed":{"@type":"AdministrativeArea","name":"Galicia"}
+      "areaServed":{"@type":"AdministrativeArea","name":"Galicia"},
+      "hasOfferCatalog":{
+        "@type":"OfferCatalog",
+        "name":"Servicios y productos",
+        "itemListElement":[
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Jardinería"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Paisajismo"}},
+          {"@type":"Offer","itemOffered":{"@type":"Service","name":"Mantenimiento de jardines"}},
+          {"@type":"Offer","itemOffered":{"@type":"Product","name":"Plantas y flores"}},
+          {"@type":"Offer","itemOffered":{"@type":"Product","name":"Árboles y plantas ornamentales, hortícolas y frutales"}},
+          {"@type":"Offer","itemOffered":{"@type":"Product","name":"Abonos y nutrición animal"}},
+          {"@type":"Offer","itemOffered":{"@type":"Product","name":"Macetas, jardineras y artículos de decoración"}}
+        ]
+      }
     },
     {
       "@type":["LocalBusiness","GardenStore"],
       "@id":"https://www.xn--troquia-9za.com/#baion",
       "name":"Troquiña S.L. — Baión",
       "parentOrganization":{"@id":"https://www.xn--troquia-9za.com/#org"},
-      "image":"https://www.xn--troquia-9za.com/garden.jpg",
+      "image":"https://www.xn--troquia-9za.com/img/opt/og-card.jpg",
       "telephone":"+34986908114",
       "url":"https://www.xn--troquia-9za.com/",
+      "areaServed":{"@type":"AdministrativeArea","name":"Galicia"},
       "address":{
         "@type":"PostalAddress",
         "streetAddress":"Sestelo, 21",
@@ -659,9 +672,10 @@ section{scroll-margin-top:76px}
       "@id":"https://www.xn--troquia-9za.com/#trabanca",
       "name":"Troquiña S.L. — Trabanca Badiña",
       "parentOrganization":{"@id":"https://www.xn--troquia-9za.com/#org"},
-      "image":"https://www.xn--troquia-9za.com/garden.jpg",
+      "image":"https://www.xn--troquia-9za.com/img/opt/og-card.jpg",
       "telephone":"+34986508737",
       "url":"https://www.xn--troquia-9za.com/",
+      "areaServed":{"@type":"AdministrativeArea","name":"Galicia"},
       "address":{
         "@type":"PostalAddress",
         "streetAddress":"Rúa Abaixo, 21",
@@ -670,6 +684,14 @@ section{scroll-margin-top:76px}
         "addressRegion":"Pontevedra",
         "addressCountry":"ES"
       }
+    },
+    {
+      "@type":"WebSite",
+      "@id":"https://www.xn--troquia-9za.com/#website",
+      "url":"https://www.xn--troquia-9za.com/",
+      "name":"Troquiña S.L.",
+      "publisher":{"@id":"https://www.xn--troquia-9za.com/#org"},
+      "inLanguage":["es","gl","en"]
     }
   ]
 }
@@ -680,188 +702,177 @@ document.body.classList.remove('no-js');
 
 /* ============================================================
    i18n — ES (default) / GL / EN
+   Every string the visitor can read lives here. To edit a text,
+   change it in all three dictionaries.
    ============================================================ */
 const I18N = {
   es:{
     "meta.title":"Troquiña S.L. — Jardinería, paisajismo y vivero en Pontevedra",
-    "meta.description":"Jardinería, paisajismo, mantenimiento de jardines y vivero de plantas en Baión y Trabanca Badiña (Pontevedra). Equipo cualificado desde 1994.",
+    "meta.description":"Jardinería, paisajismo, mantenimiento de jardines y vivero de plantas en Baión y Trabanca Badiña (Pontevedra). Empresa de servicios creada en 1994.",
+    "meta.ogalt":"Trabajos de jardinería y vivero de Troquiña S.L.",
     "a11y.skip":"Saltar al contenido","a11y.lang":"Idioma","a11y.menu":"Menú",
-    "nav.services":"Servicios","nav.nursery":"Vivero","nav.process":"Cómo trabajamos",
-    "nav.about":"Nosotros","nav.locations":"Dónde estamos","nav.contact":"Contacto","nav.cta":"Pedir presupuesto",
+    "nav.services":"Servicios","nav.nursery":"Vivero","nav.about":"Nosotros",
+    "nav.locations":"Dónde estamos","nav.contact":"Contacto","nav.cta":"Contacto",
     "hero.eyebrow":"Baión · Trabanca Badiña · Pontevedra",
     "hero.title":"Jardines que crecen con el tiempo",
-    "hero.lead":"Jardinería, paisajismo y mantenimiento en Galicia desde 1994, con vivero propio y un equipo formado para cada trabajo.",
-    "hero.cta1":"Pedir presupuesto","hero.cta2":"Ver servicios",
-    "stat.1":"Fundada en O Salnés","stat.2":"Centros con vivero y venta al público",
-    "stat.3":"Años trabajando zonas verdes","stat.4":"Zona de servicio",
+    "hero.lead":"Jardinería, paisajismo y mantenimiento de jardines en Galicia desde 1994, con vivero propio en nuestros dos centros de O Salnés.",
+    "hero.cta1":"Contactar","hero.cta2":"Ver servicios",
+    "stat.1":"Año de creación de la empresa","stat.2":"Centros: Baión y Trabanca Badiña",
+    "stat.3":"Años dedicados a la jardinería y el paisajismo","stat.4":"Zona de servicio",
     "services.eyebrow":"Qué hacemos","services.title":"Servicios",
-    "services.lead":"Todo lo que necesita un jardín, desde la primera idea hasta el mantenimiento de cada temporada.",
-    "s1.t":"Jardinería","s1.d":"Plantación, césped, setos y cierres vegetales. Ejecutamos el jardín completo o el trabajo puntual que necesites.",
-    "s2.t":"Paisajismo","s2.d":"Diseñamos el espacio antes de tocarlo: recorridos, volúmenes, especies y cómo se verá dentro de cinco años.",
-    "s3.t":"Mantenimiento","s3.d":"Siega, poda, desbroce, abonado y limpieza con visitas periódicas. Para particulares, comunidades y empresas.",
-    "s4.t":"Vivero de plantas y flores","s4.d":"Planta de temporada, interior y exterior, seleccionada para el clima de las Rías Baixas.",
-    "s5.t":"Árboles y frutales","s5.d":"Árboles, plantas ornamentales y frutales, con el consejo de quien sabe dónde y cómo plantarlos.",
-    "s6.t":"Abonos y nutrición animal","s6.d":"Sustratos, abonos y productos de nutrición animal para el jardín, la huerta y la finca.",
-    "nursery.eyebrow":"El vivero","nursery.title":"Dos centros abiertos al público",
-    "nursery.lead":"No sólo trabajamos en jardines: puedes venir a por la planta, el sustrato o la maceta. En Baión y en Trabanca Badiña encontrarás:",
-    "n.1":"Planta de temporada, interior y exterior","n.2":"Árboles ornamentales y frutales",
-    "n.3":"Sustratos, abonos y fitosanitarios","n.4":"Nutrición animal",
-    "n.5":"Macetas, jardineras y adornos","n.6":"El consejo de quien planta todos los días",
+    "services.lead":"Somos una empresa de servicios especializada en jardinería y paisajismo, con vivero propio.",
+    "s1.t":"Jardinería","s1.d":"La actividad principal de la empresa desde 1994, junto con el paisajismo.",
+    "s2.t":"Paisajismo","s2.d":"Diseño de espacios verdes. Nuestra especialidad, junto con la jardinería, desde el primer día.",
+    "s3.t":"Mantenimiento de jardines","s3.d":"Cuidado continuado de jardines y zonas verdes.",
+    "s4.t":"Vivero de plantas y flores","s4.d":"Vivero propio de plantas y flores en nuestros dos centros.",
+    "s5.t":"Árboles y plantas","s5.d":"Árboles, plantas ornamentales, hortícolas y frutales.",
+    "s6.t":"Nutrición animal y abonos","s6.d":"Abonos para el jardín y la huerta, y productos de nutrición animal.",
+    "nursery.eyebrow":"El vivero","nursery.title":"Plantas, árboles y todo para el jardín",
+    "nursery.lead":"Además de los trabajos de jardinería, en nuestros dos centros de Baión y Trabanca Badiña encontrarás:",
+    "n.1":"Plantas y flores","n.2":"Árboles y plantas ornamentales",
+    "n.3":"Plantas hortícolas y frutales","n.4":"Abonos","n.5":"Nutrición animal",
+    "n.6":"Macetas, jardineras y artículos de decoración",
     "nursery.cta":"Ver las dos direcciones",
     "alt.nursery1":"Bandejas de planta ornamental en el vivero",
     "alt.nursery2":"Plántulas germinando en semillero",
     "alt.nursery3":"Herramientas y macetas de jardinería",
-    "process.eyebrow":"Cómo trabajamos","process.title":"Cuatro pasos, sin sorpresas",
-    "p1.t":"Visita","p1.d":"Vamos a ver el terreno, escuchamos qué quieres y cuánto tiempo tienes para cuidarlo.",
-    "p2.t":"Propuesta y presupuesto","p2.d":"Te contamos qué se puede hacer, con qué plantas y a qué precio. Sin compromiso.",
-    "p3.t":"Ejecución","p3.d":"Trabaja nuestro equipo, con planta de nuestro vivero y plazos acordados.",
-    "p4.t":"Mantenimiento","p4.d":"Si quieres, seguimos: visitas periódicas para que el jardín siga como el primer día.",
-    "about.eyebrow":"Nosotros","about.title":"Más de treinta años en O Salnés",
+    "about.eyebrow":"Nosotros","about.title":"Una empresa de servicios desde 1994",
     "about.caption":"Jardinería y paisajismo · O Salnés, Pontevedra",
-    "about.p1":"Troquiña S.L. es una empresa de servicios creada en 1994 y especializada en jardinería y paisajismo. Desde entonces hemos crecido despacio, como crecen los jardines: aprendiendo qué funciona en este clima y qué no.",
-    "about.p2":"Contamos con una plantilla cualificada y formada para cada una de las actividades, y con vivero propio, lo que nos permite elegir la planta antes de plantarla y responder por ella después.",
-    "about.p3":"Trabajamos para particulares, comunidades de vecinos y empresas en toda Galicia, con base en la comarca de O Salnés.",
-    "locations.eyebrow":"Dónde estamos","locations.title":"Dos centros, la misma casa",
+    "about.p1":"Troquiña S.L. es una empresa de servicios creada en el año 1994, especializada en jardinería y paisajismo. Contamos con una plantilla cualificada y formada para cada una de las actividades.",
+    "about.p2":"Trabajamos en toda Galicia desde nuestros dos centros de la comarca de O Salnés: Baión, en Vilanova de Arousa, y Trabanca Badiña, en Vilagarcía de Arousa.",
+    "locations.eyebrow":"Dónde estamos","locations.title":"Dos centros en O Salnés",
     "loc1.name":"Baión — Vilanova de Arousa","loc2.name":"Trabanca Badiña — Vilagarcía de Arousa",
     "loc.hours":"Consulta el horario actualizado en Google Maps.",
     "loc.map":"Cómo llegar","loc.call":"Llamar",
-    "contact.eyebrow":"Contacto","contact.title":"Cuéntanos qué jardín tienes en la cabeza",
-    "contact.lead":"Escríbenos o llámanos. Te respondemos con una propuesta y un presupuesto sin compromiso.",
+    "contact.eyebrow":"Contacto","contact.title":"¿Hablamos de tu jardín?",
+    "contact.lead":"Cuéntanos qué necesitas y te respondemos lo antes posible.",
     "form.name":"Nombre","form.phone":"Teléfono","form.email":"Email","form.msg":"¿Qué necesitas?",
-    "form.msgph":"Un jardín nuevo, mantenimiento, una poda, una duda sobre una planta…",
+    "form.msgph":"Cuéntanos brevemente qué necesitas…",
     "form.send":"Enviar","form.privacy":"Al enviar aceptas que usemos tus datos únicamente para responderte.",
     "contact.or":"O directamente:",
     "direct.loc1":"Baión — Vilanova de Arousa","direct.loc2":"Trabanca Badiña — Vilagarcía de Arousa",
-    "direct.ig":"Nuestros trabajos, en Instagram",
+    "direct.ig":"Instagram",
     "footer.tag":"Jardinería y paisajismo desde 1994","footer.rights":"Todos los derechos reservados."
   },
 
   gl:{
     "meta.title":"Troquiña S.L. — Xardinería, paisaxismo e viveiro en Pontevedra",
-    "meta.description":"Xardinería, paisaxismo, mantemento de xardíns e viveiro de plantas en Baión e Trabanca Badiña (Pontevedra). Equipo cualificado desde 1994.",
+    "meta.description":"Xardinería, paisaxismo, mantemento de xardíns e viveiro de plantas en Baión e Trabanca Badiña (Pontevedra). Empresa de servizos creada en 1994.",
+    "meta.ogalt":"Traballos de xardinería e viveiro de Troquiña S.L.",
     "a11y.skip":"Ir ao contido","a11y.lang":"Idioma","a11y.menu":"Menú",
-    "nav.services":"Servizos","nav.nursery":"Viveiro","nav.process":"Como traballamos",
-    "nav.about":"Nós","nav.locations":"Onde estamos","nav.contact":"Contacto","nav.cta":"Pedir orzamento",
+    "nav.services":"Servizos","nav.nursery":"Viveiro","nav.about":"Nós",
+    "nav.locations":"Onde estamos","nav.contact":"Contacto","nav.cta":"Contacto",
     "hero.eyebrow":"Baión · Trabanca Badiña · Pontevedra",
     "hero.title":"Xardíns que medran co tempo",
-    "hero.lead":"Xardinería, paisaxismo e mantemento en Galicia desde 1994, con viveiro propio e un equipo formado para cada traballo.",
-    "hero.cta1":"Pedir orzamento","hero.cta2":"Ver servizos",
-    "stat.1":"Fundada no Salnés","stat.2":"Centros con viveiro e venda ao público",
-    "stat.3":"Anos traballando zonas verdes","stat.4":"Zona de servizo",
+    "hero.lead":"Xardinería, paisaxismo e mantemento de xardíns en Galicia desde 1994, con viveiro propio nos nosos dous centros do Salnés.",
+    "hero.cta1":"Contactar","hero.cta2":"Ver servizos",
+    "stat.1":"Ano de creación da empresa","stat.2":"Centros: Baión e Trabanca Badiña",
+    "stat.3":"Anos dedicados á xardinería e ao paisaxismo","stat.4":"Zona de servizo",
     "services.eyebrow":"Que facemos","services.title":"Servizos",
-    "services.lead":"Todo o que precisa un xardín, desde a primeira idea ata o mantemento de cada tempada.",
-    "s1.t":"Xardinería","s1.d":"Plantación, céspede, sebes e valados vexetais. Executamos o xardín completo ou o traballo puntual que precises.",
-    "s2.t":"Paisaxismo","s2.d":"Deseñamos o espazo antes de tocalo: percorridos, volumes, especies e como se verá dentro de cinco anos.",
-    "s3.t":"Mantemento","s3.d":"Sega, poda, rozadura, abonado e limpeza con visitas periódicas. Para particulares, comunidades e empresas.",
-    "s4.t":"Viveiro de plantas e flores","s4.d":"Planta de tempada, interior e exterior, escollida para o clima das Rías Baixas.",
-    "s5.t":"Árbores e froiteiras","s5.d":"Árbores, plantas ornamentais e froiteiras, co consello de quen sabe onde e como plantalas.",
-    "s6.t":"Abonos e nutrición animal","s6.d":"Substratos, abonos e produtos de nutrición animal para o xardín, a horta e a finca.",
-    "nursery.eyebrow":"O viveiro","nursery.title":"Dous centros abertos ao público",
-    "nursery.lead":"Non só traballamos en xardíns: podes vir pola planta, o substrato ou a maceta. En Baión e en Trabanca Badiña atoparás:",
-    "n.1":"Planta de tempada, interior e exterior","n.2":"Árbores ornamentais e froiteiras",
-    "n.3":"Substratos, abonos e fitosanitarios","n.4":"Nutrición animal",
-    "n.5":"Macetas, xardineiras e adornos","n.6":"O consello de quen planta todos os días",
+    "services.lead":"Somos unha empresa de servizos especializada en xardinería e paisaxismo, con viveiro propio.",
+    "s1.t":"Xardinería","s1.d":"A actividade principal da empresa desde 1994, xunto co paisaxismo.",
+    "s2.t":"Paisaxismo","s2.d":"Deseño de espazos verdes. A nosa especialidade, xunto coa xardinería, desde o primeiro día.",
+    "s3.t":"Mantemento de xardíns","s3.d":"Coidado continuado de xardíns e zonas verdes.",
+    "s4.t":"Viveiro de plantas e flores","s4.d":"Viveiro propio de plantas e flores nos nosos dous centros.",
+    "s5.t":"Árbores e plantas","s5.d":"Árbores, plantas ornamentais, hortícolas e froiteiras.",
+    "s6.t":"Nutrición animal e abonos","s6.d":"Abonos para o xardín e a horta, e produtos de nutrición animal.",
+    "nursery.eyebrow":"O viveiro","nursery.title":"Plantas, árbores e todo para o xardín",
+    "nursery.lead":"Ademais dos traballos de xardinería, nos nosos dous centros de Baión e Trabanca Badiña atoparás:",
+    "n.1":"Plantas e flores","n.2":"Árbores e plantas ornamentais",
+    "n.3":"Plantas hortícolas e froiteiras","n.4":"Abonos","n.5":"Nutrición animal",
+    "n.6":"Macetas, xardineiras e artigos de decoración",
     "nursery.cta":"Ver os dous enderezos",
     "alt.nursery1":"Bandexas de planta ornamental no viveiro",
     "alt.nursery2":"Plántulas agromando no semilleiro",
     "alt.nursery3":"Ferramentas e macetas de xardinería",
-    "process.eyebrow":"Como traballamos","process.title":"Catro pasos, sen sorpresas",
-    "p1.t":"Visita","p1.d":"Imos ver o terreo, escoitamos que queres e canto tempo tes para coidalo.",
-    "p2.t":"Proposta e orzamento","p2.d":"Contámosche que se pode facer, con que plantas e a que prezo. Sen compromiso.",
-    "p3.t":"Execución","p3.d":"Traballa o noso equipo, con planta do noso viveiro e prazos acordados.",
-    "p4.t":"Mantemento","p4.d":"Se queres, seguimos: visitas periódicas para que o xardín siga como o primeiro día.",
-    "about.eyebrow":"Nós","about.title":"Máis de trinta anos no Salnés",
+    "about.eyebrow":"Nós","about.title":"Unha empresa de servizos desde 1994",
     "about.caption":"Xardinería e paisaxismo · O Salnés, Pontevedra",
-    "about.p1":"Troquiña S.L. é unha empresa de servizos creada en 1994 e especializada en xardinería e paisaxismo. Desde entón medramos amodo, como medran os xardíns: aprendendo que funciona neste clima e que non.",
-    "about.p2":"Contamos cun cadro de persoal cualificado e formado para cada unha das actividades, e con viveiro propio, o que nos permite escoller a planta antes de plantala e responder por ela despois.",
-    "about.p3":"Traballamos para particulares, comunidades de veciños e empresas en toda Galicia, con base na comarca do Salnés.",
-    "locations.eyebrow":"Onde estamos","locations.title":"Dous centros, a mesma casa",
+    "about.p1":"Troquiña S.L. é unha empresa de servizos creada no ano 1994, especializada en xardinería e paisaxismo. Contamos cun cadro de persoal cualificado e formado para cada unha das actividades.",
+    "about.p2":"Traballamos en toda Galicia desde os nosos dous centros da comarca do Salnés: Baión, en Vilanova de Arousa, e Trabanca Badiña, en Vilagarcía de Arousa.",
+    "locations.eyebrow":"Onde estamos","locations.title":"Dous centros no Salnés",
     "loc1.name":"Baión — Vilanova de Arousa","loc2.name":"Trabanca Badiña — Vilagarcía de Arousa",
     "loc.hours":"Consulta o horario actualizado en Google Maps.",
     "loc.map":"Como chegar","loc.call":"Chamar",
-    "contact.eyebrow":"Contacto","contact.title":"Cóntanos que xardín tes na cabeza",
-    "contact.lead":"Escríbenos ou chámanos. Respondémosche cunha proposta e un orzamento sen compromiso.",
+    "contact.eyebrow":"Contacto","contact.title":"Falamos do teu xardín?",
+    "contact.lead":"Cóntanos que precisas e respondémosche o antes posible.",
     "form.name":"Nome","form.phone":"Teléfono","form.email":"Email","form.msg":"Que precisas?",
-    "form.msgph":"Un xardín novo, mantemento, unha poda, unha dúbida sobre unha planta…",
+    "form.msgph":"Cóntanos brevemente que precisas…",
     "form.send":"Enviar","form.privacy":"Ao enviar aceptas que usemos os teus datos unicamente para responderche.",
     "contact.or":"Ou directamente:",
     "direct.loc1":"Baión — Vilanova de Arousa","direct.loc2":"Trabanca Badiña — Vilagarcía de Arousa",
-    "direct.ig":"Os nosos traballos, en Instagram",
+    "direct.ig":"Instagram",
     "footer.tag":"Xardinería e paisaxismo desde 1994","footer.rights":"Todos os dereitos reservados."
   },
 
   en:{
     "meta.title":"Troquiña S.L. — Gardening, landscaping and plant nursery in Pontevedra",
-    "meta.description":"Gardening, landscaping, garden maintenance and a plant nursery in Baión and Trabanca Badiña (Pontevedra, Galicia). Qualified team since 1994.",
+    "meta.description":"Gardening, landscaping, garden maintenance and a plant nursery in Baión and Trabanca Badiña (Pontevedra, Galicia). A service company founded in 1994.",
+    "meta.ogalt":"Gardening work and plant nursery at Troquiña S.L.",
     "a11y.skip":"Skip to content","a11y.lang":"Language","a11y.menu":"Menu",
-    "nav.services":"Services","nav.nursery":"Nursery","nav.process":"How we work",
-    "nav.about":"About","nav.locations":"Find us","nav.contact":"Contact","nav.cta":"Get a quote",
+    "nav.services":"Services","nav.nursery":"Nursery","nav.about":"About",
+    "nav.locations":"Find us","nav.contact":"Contact","nav.cta":"Contact",
     "hero.eyebrow":"Baión · Trabanca Badiña · Pontevedra",
     "hero.title":"Gardens that grow with time",
-    "hero.lead":"Gardening, landscaping and maintenance across Galicia since 1994 — with our own nursery and a crew trained for every job.",
-    "hero.cta1":"Get a quote","hero.cta2":"See services",
-    "stat.1":"Founded in O Salnés","stat.2":"Garden centres open to the public",
-    "stat.3":"Years working on green spaces","stat.4":"Service area",
+    "hero.lead":"Gardening, landscaping and garden maintenance across Galicia since 1994, with our own plant nursery at both of our centres in O Salnés.",
+    "hero.cta1":"Get in touch","hero.cta2":"See services",
+    "stat.1":"Year the company was founded","stat.2":"Centres: Baión and Trabanca Badiña",
+    "stat.3":"Years dedicated to gardening and landscaping","stat.4":"Service area",
     "services.eyebrow":"What we do","services.title":"Services",
-    "services.lead":"Everything a garden needs, from the first idea to the upkeep of every season.",
-    "s1.t":"Gardening","s1.d":"Planting, lawns, hedges and green screens. We build the whole garden, or just the one job you need.",
-    "s2.t":"Landscape design","s2.d":"We design the space before we touch it: paths, volumes, species — and how it will look in five years.",
-    "s3.t":"Maintenance","s3.d":"Mowing, pruning, clearing, feeding and clean-up on a regular schedule. For homes, residents' associations and businesses.",
-    "s4.t":"Plant and flower nursery","s4.d":"Seasonal, indoor and outdoor plants, chosen for the Rías Baixas climate.",
-    "s5.t":"Trees and fruit trees","s5.d":"Ornamental and fruit trees, with advice from the people who plant them every day.",
-    "s6.t":"Fertilisers and animal feed","s6.d":"Substrates, fertilisers and animal nutrition products for the garden, the vegetable patch and the smallholding.",
-    "nursery.eyebrow":"The nursery","nursery.title":"Two garden centres open to the public",
-    "nursery.lead":"We don't only work in gardens — come by for the plant, the compost or the pot. At Baión and Trabanca Badiña you'll find:",
-    "n.1":"Seasonal, indoor and outdoor plants","n.2":"Ornamental and fruit trees",
-    "n.3":"Substrates, fertilisers and plant care","n.4":"Animal feed",
-    "n.5":"Pots, planters and ornaments","n.6":"Advice from people who plant every day",
+    "services.lead":"We are a service company specialising in gardening and landscaping, with our own plant nursery.",
+    "s1.t":"Gardening","s1.d":"The company's main activity since 1994, alongside landscaping.",
+    "s2.t":"Landscaping","s2.d":"Design of green spaces. Our speciality, together with gardening, from day one.",
+    "s3.t":"Garden maintenance","s3.d":"Ongoing care of gardens and green areas.",
+    "s4.t":"Plant and flower nursery","s4.d":"Our own plant and flower nursery at both centres.",
+    "s5.t":"Trees and plants","s5.d":"Trees, ornamental plants, vegetable plants and fruit trees.",
+    "s6.t":"Animal feed and fertilisers","s6.d":"Fertilisers for the garden and the vegetable patch, and animal nutrition products.",
+    "nursery.eyebrow":"The nursery","nursery.title":"Plants, trees and everything for the garden",
+    "nursery.lead":"Alongside our gardening work, at our two centres in Baión and Trabanca Badiña you will find:",
+    "n.1":"Plants and flowers","n.2":"Trees and ornamental plants",
+    "n.3":"Vegetable plants and fruit trees","n.4":"Fertilisers","n.5":"Animal feed",
+    "n.6":"Pots, planters and decorative items",
     "nursery.cta":"See both addresses",
     "alt.nursery1":"Trays of ornamental plants at the nursery",
     "alt.nursery2":"Seedlings sprouting in a seed tray",
     "alt.nursery3":"Gardening tools and pots",
-    "process.eyebrow":"How we work","process.title":"Four steps, no surprises",
-    "p1.t":"Visit","p1.d":"We come and see the plot, and listen to what you want and how much time you have to look after it.",
-    "p2.t":"Proposal and quote","p2.d":"We tell you what can be done, with which plants and at what price. No obligation.",
-    "p3.t":"The work","p3.d":"Our own crew, plants from our own nursery, agreed timelines.",
-    "p4.t":"Maintenance","p4.d":"If you'd like, we stay on: regular visits so the garden looks the way it did on day one.",
-    "about.eyebrow":"About us","about.title":"Thirty years in O Salnés",
+    "about.eyebrow":"About us","about.title":"A service company since 1994",
     "about.caption":"Gardening and landscaping · O Salnés, Pontevedra",
-    "about.p1":"Troquiña S.L. is a service company founded in 1994, specialising in gardening and landscaping. We've grown slowly since then, the way gardens do: learning what works in this climate and what doesn't.",
-    "about.p2":"Our staff is qualified and trained for each of our activities, and we run our own nursery — which lets us choose the plant before it goes in the ground, and stand behind it afterwards.",
-    "about.p3":"We work for private homes, residents' associations and businesses throughout Galicia, from our base in the O Salnés area.",
-    "locations.eyebrow":"Find us","locations.title":"Two centres, one family business",
+    "about.p1":"Troquiña S.L. is a service company founded in 1994, specialising in gardening and landscaping. Our staff is qualified and trained for each of our activities.",
+    "about.p2":"We work throughout Galicia from our two centres in the O Salnés area: Baión, in Vilanova de Arousa, and Trabanca Badiña, in Vilagarcía de Arousa.",
+    "locations.eyebrow":"Find us","locations.title":"Two centres in O Salnés",
     "loc1.name":"Baión — Vilanova de Arousa","loc2.name":"Trabanca Badiña — Vilagarcía de Arousa",
     "loc.hours":"Check current opening hours on Google Maps.",
     "loc.map":"Directions","loc.call":"Call",
-    "contact.eyebrow":"Contact","contact.title":"Tell us about the garden you have in mind",
-    "contact.lead":"Write or call. We'll come back with a proposal and a quote, no obligation.",
+    "contact.eyebrow":"Contact","contact.title":"Let's talk about your garden",
+    "contact.lead":"Tell us what you need and we'll get back to you as soon as we can.",
     "form.name":"Name","form.phone":"Phone","form.email":"Email","form.msg":"What do you need?",
-    "form.msgph":"A new garden, maintenance, some pruning, a question about a plant…",
+    "form.msgph":"Tell us briefly what you need…",
     "form.send":"Send","form.privacy":"By sending this you agree that we may use your details only to reply to you.",
     "contact.or":"Or get in touch directly:",
     "direct.loc1":"Baión — Vilanova de Arousa","direct.loc2":"Trabanca Badiña — Vilagarcía de Arousa",
-    "direct.ig":"Our work, on Instagram",
+    "direct.ig":"Instagram",
     "footer.tag":"Gardening and landscaping since 1994","footer.rights":"All rights reserved."
   }
 };
 
 const LOCALES = {es:"es_ES",gl:"gl_ES",en:"en_GB"};
+const BASE = "https://www.xn--troquia-9za.com/";
 
+/* ?lang= wins, then the visitor's saved choice, then the browser, then Spanish. */
 function detectLang(){
   const q = new URLSearchParams(location.search).get('lang');
-  if(q && I18N[q]) return q;
+  if(q && I18N[q]) return {lang:q,explicit:true};
   try{
     const saved = localStorage.getItem('troquina-lang');
-    if(saved && I18N[saved]) return saved;
+    if(saved && I18N[saved]) return {lang:saved,explicit:false};
   }catch(e){}
   for(const l of (navigator.languages || [navigator.language || 'es'])){
     const code = String(l).toLowerCase().split('-')[0];
-    if(I18N[code]) return code;
+    if(I18N[code]) return {lang:code,explicit:false};
   }
-  return 'es';
+  return {lang:'es',explicit:false};
 }
 
-function setLang(lang,{persist = true} = {}){
+function setLang(lang,{persist = true,explicit = true} = {}){
   const dict = I18N[lang] || I18N.es;
 
   document.documentElement.lang = lang;
@@ -886,6 +897,12 @@ function setLang(lang,{persist = true} = {}){
   const og = document.querySelector('meta[property="og:locale"]');
   if(og) og.setAttribute('content',LOCALES[lang] || 'es_ES');
 
+  /* Only a deliberate ?lang= URL gets its own canonical; the bare URL stays
+     the canonical Spanish page so the three variants don't compete. */
+  const url = explicit && lang !== 'es' ? BASE + '?lang=' + lang : BASE;
+  document.getElementById('canonical').setAttribute('href',url);
+  document.getElementById('ogurl').setAttribute('content',url);
+
   document.querySelectorAll('.langs button').forEach(b=>{
     b.setAttribute('aria-current',String(b.dataset.lang === lang));
   });
@@ -896,7 +913,8 @@ function setLang(lang,{persist = true} = {}){
 document.querySelectorAll('.langs button').forEach(btn=>{
   btn.addEventListener('click',()=>setLang(btn.dataset.lang));
 });
-setLang(detectLang(),{persist:false});
+const initial = detectLang();
+setLang(initial.lang,{persist:false,explicit:initial.explicit});
 
 /* ---------- nav: scrolled state, mobile menu, active section ---------- */
 const nav = document.getElementById('nav');
