@@ -9,14 +9,16 @@
  * rather than silently dropping an enquiry.
  */
 
-// WARNING (verified 2026-08-24): DreamHost currently rejects EVERY address at
-// xn--troquia-9za.com with "554 5.7.1 Recipient address rejected: Access
-// denied" — including postmaster@ and addresses that do not exist. No mailbox
-// is provisioned there yet, so enquiries sent to these addresses will bounce.
-// Create the mailboxes in the DreamHost panel (or switch to @troquinha.com,
-// which has live Microsoft 365 MX records), then clear the Resend suppression
-// list at https://resend.com/suppressions before relying on this.
-const RECIPIENTS = ['info@xn--troquia-9za.com', 'tecnicos@xn--troquia-9za.com'];
+// Interim recipient while the owners confirm which domain they actually use.
+//
+// troquinha.com has live Microsoft 365 MX records and accepts mail today.
+// The site's own domain (xn--troquia-9za.com / troquiña.com) does NOT: verified
+// 2026-08-24, DreamHost rejects every address there with "554 5.7.1 Recipient
+// address rejected: Access denied", including postmaster@ and addresses that do
+// not exist, so no mailbox is provisioned. Do not route enquiries there until
+// the mailboxes exist and the Resend suppressions are cleared at
+// https://resend.com/suppressions.
+const RECIPIENTS = ['tecnicos@troquinha.com'];
 
 // Resend only accepts a From address on a domain verified in that account.
 // troquiña.com is not verified there, so we send from the verified domain and
@@ -77,7 +79,7 @@ export async function onRequestPost({ request, env }) {
       from: FROM,
       to: RECIPIENTS,
       reply_to: email,
-      subject: `Web: ${nombre}`,
+      subject: `Web troquiña.com — ${nombre}`,
       html,
     }),
   });
