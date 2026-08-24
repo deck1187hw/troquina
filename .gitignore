@@ -43,3 +43,8 @@ yarn-error.log*
 .idea
 
 tmp*
+# Local DNS snapshot taken before the Cloudflare Pages migration
+/.dns-backup
+
+# wrangler local cache
+/.wrangler
