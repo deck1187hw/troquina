@@ -17,6 +17,10 @@
   Cache-Control: public, max-age=0, must-revalidate
 /index.html
   Cache-Control: public, max-age=0, must-revalidate
+/gl/
+  Cache-Control: public, max-age=0, must-revalidate
+/en/
+  Cache-Control: public, max-age=0, must-revalidate
 
 # Generated derivatives never change under these names — replacing one means
 # renaming it — so they are safe to cache for a year and never revalidate.
@@ -44,6 +48,3 @@
 /sitemap.xml
   Cache-Control: public, max-age=86400
 
-# Never cache form submissions.
-/api/*
-  Cache-Control: no-store

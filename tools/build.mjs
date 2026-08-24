@@ -27,7 +27,7 @@ const INCLUDE = [
   'img/garden1.jpg',
   'img/garden2.jpg',
   'img/garden3.jpg',
-  'functions',
+  'functions',   // _middleware.js only — the contact form was removed
 ];
 
 let files = 0, bytes = 0;
@@ -44,6 +44,9 @@ for (const rel of INCLUDE) {
     if (st.isFile()) { files++; bytes += st.size; }
   }
 }
+
+// Render one real HTML document per language.
+await import('./prerender.mjs');
 
 console.log(`built dist/  ${files} files, ${(bytes / 1024).toFixed(0)}KB`);
 

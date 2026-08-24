@@ -292,23 +292,6 @@ section{scroll-margin-top:76px}
 .contact .eyebrow{color:var(--sage)}
 .contact .eyebrow::before{background:var(--sage)}
 .contact .lead{color:rgba(255,255,255,.78)}
-.form{display:grid;gap:1rem}
-.row{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
-.field{display:grid;gap:.4rem}
-.field label{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--sage)}
-.field input,.field textarea{
-  font:inherit;font-size:1rem;color:#fff;background:rgba(255,255,255,.07);
-  border:1px solid rgba(255,255,255,.24);border-radius:12px;padding:.8rem .95rem;width:100%;
-  transition:border-color .2s,background-color .2s;
-}
-.field textarea{min-height:130px;resize:vertical}
-.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.45)}
-.field input:focus,.field textarea:focus{background:rgba(255,255,255,.12);border-color:var(--sage)}
-.form-note{font-size:.8rem;color:rgba(255,255,255,.55);max-width:46ch}
-.form-status{font-size:.92rem;font-weight:500;margin-top:.4rem;padding:.75rem 1rem;border-radius:12px;max-width:46ch}
-.form-status.ok{background:rgba(143,169,142,.18);border:1px solid var(--sage);color:#EAF3E9}
-.form-status.err{background:rgba(193,80,46,.16);border:1px solid var(--clay);color:#FBDDD2}
-.hp{position:absolute;left:-9999px}
 .direct{display:grid;gap:.9rem;align-content:start}
 .direct a{
   display:flex;align-items:center;gap:.9rem;color:#fff;text-decoration:none;
@@ -548,40 +531,18 @@ section{scroll-margin-top:76px}
 
 <!-- ================= CONTACT ================= -->
 <section class="band contact" id="contact">
-  <div class="wrap split" style="align-items:start">
-    <div class="rv">
-      <p class="eyebrow" data-i18n="contact.eyebrow">Contacto</p>
-      <h2 class="h2" data-i18n="contact.title">¿Hablamos de tu jardín?</h2>
-      <p class="lead" data-i18n="contact.lead">Cuéntanos qué necesitas y te respondemos lo antes posible.</p>
-
-      <form class="form" id="contact-form" name="contacto" method="POST" action="/api/contact" style="margin-top:2rem">
-        <p class="hp"><label>Bot field <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <div class="row">
-          <p class="field" style="margin:0">
-            <label for="f-name" data-i18n="form.name">Nombre</label>
-            <input id="f-name" name="nombre" type="text" autocomplete="name" required>
-          </p>
-          <p class="field" style="margin:0">
-            <label for="f-phone" data-i18n="form.phone">Teléfono</label>
-            <input id="f-phone" name="telefono" type="tel" autocomplete="tel">
-          </p>
-        </div>
-        <p class="field" style="margin:0">
-          <label for="f-mail" data-i18n="form.email">Email</label>
-          <input id="f-mail" name="email" type="email" autocomplete="email" required>
-        </p>
-        <p class="field" style="margin:0">
-          <label for="f-msg" data-i18n="form.msg">¿Qué necesitas?</label>
-          <textarea id="f-msg" name="mensaje" required data-i18n-placeholder="form.msgph" placeholder="Cuéntanos brevemente qué necesitas…"></textarea>
-        </p>
-        <p style="margin:0"><button class="btn btn-primary" type="submit" data-i18n="form.send">Enviar</button></p>
-        <p class="form-note" data-i18n="form.privacy">Al enviar aceptas que usemos tus datos únicamente para responderte.</p>
-        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
-      </form>
+  <div class="wrap">
+    <div class="sec-head rv" style="text-align:center;max-width:60ch;margin-inline:auto">
+      <p class="eyebrow" style="justify-content:center" data-i18n="contact.eyebrow">Contacto</p>
+      <h2 class="h2" style="margin-inline:auto" data-i18n="contact.title">¿Hablamos de tu jardín?</h2>
+      <p class="lead" style="margin-inline:auto" data-i18n="contact.lead">Escríbenos un correo o llámanos a cualquiera de nuestros dos centros. Te respondemos lo antes posible.</p>
     </div>
 
-    <div class="direct rv" style="margin-top:clamp(2rem,4vw,4.6rem)">
-      <p class="form-note" style="margin-bottom:.2rem" data-i18n="contact.or">O directamente:</p>
+    <div class="direct rv">
+      <a href="mailto:tecnicos@troquinha.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg>
+        <span><b>tecnicos@troquinha.com</b><small data-i18n="direct.mail">Escríbenos un correo</small></span>
+      </a>
       <a href="tel:+34986908114">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
         <span><b>+34 986 908 114</b><small data-i18n="direct.loc1">Baión — Vilanova de Arousa</small></span>
@@ -748,14 +709,10 @@ const I18N = {
     "loc.hours":"Consulta el horario actualizado en Google Maps.",
     "loc.map":"Cómo llegar","loc.call":"Llamar",
     "contact.eyebrow":"Contacto","contact.title":"¿Hablamos de tu jardín?",
-    "contact.lead":"Cuéntanos qué necesitas y te respondemos lo antes posible.",
-    "form.sending":"Enviando…","form.ok":"Mensaje enviado. Te responderemos lo antes posible.","form.err":"No se pudo enviar. Llámanos al 986 908 114 o inténtalo de nuevo.",
-    "form.name":"Nombre","form.phone":"Teléfono","form.email":"Email","form.msg":"¿Qué necesitas?",
-    "form.msgph":"Cuéntanos brevemente qué necesitas…",
-    "form.send":"Enviar","form.privacy":"Al enviar aceptas que usemos tus datos únicamente para responderte.",
+    "contact.lead":"Escríbenos un correo o llámanos a cualquiera de nuestros dos centros. Te respondemos lo antes posible.",
     "contact.or":"O directamente:",
     "direct.loc1":"Baión — Vilanova de Arousa","direct.loc2":"Trabanca Badiña — Vilagarcía de Arousa",
-    "direct.ig":"Instagram",
+    "direct.ig":"Instagram","direct.mail":"Escríbenos un correo",
     "footer.tag":"Jardinería y paisajismo desde 1994","footer.rights":"Todos los derechos reservados."
   },
 
@@ -798,14 +755,10 @@ const I18N = {
     "loc.hours":"Consulta o horario actualizado en Google Maps.",
     "loc.map":"Como chegar","loc.call":"Chamar",
     "contact.eyebrow":"Contacto","contact.title":"Falamos do teu xardín?",
-    "contact.lead":"Cóntanos que precisas e respondémosche o antes posible.",
-    "form.sending":"Enviando…","form.ok":"Mensaxe enviada. Responderémosche o antes posible.","form.err":"Non se puido enviar. Chámanos ao 986 908 114 ou téntao de novo.",
-    "form.name":"Nome","form.phone":"Teléfono","form.email":"Email","form.msg":"Que precisas?",
-    "form.msgph":"Cóntanos brevemente que precisas…",
-    "form.send":"Enviar","form.privacy":"Ao enviar aceptas que usemos os teus datos unicamente para responderche.",
+    "contact.lead":"Escríbenos un correo ou chámanos a calquera dos nosos dous centros. Respondémosche o antes posible.",
     "contact.or":"Ou directamente:",
     "direct.loc1":"Baión — Vilanova de Arousa","direct.loc2":"Trabanca Badiña — Vilagarcía de Arousa",
-    "direct.ig":"Instagram",
+    "direct.ig":"Instagram","direct.mail":"Escríbenos un correo",
     "footer.tag":"Xardinería e paisaxismo desde 1994","footer.rights":"Todos os dereitos reservados."
   },
 
@@ -848,14 +801,10 @@ const I18N = {
     "loc.hours":"Check current opening hours on Google Maps.",
     "loc.map":"Directions","loc.call":"Call",
     "contact.eyebrow":"Contact","contact.title":"Let's talk about your garden",
-    "contact.lead":"Tell us what you need and we'll get back to you as soon as we can.",
-    "form.sending":"Sending…","form.ok":"Message sent. We'll get back to you as soon as we can.","form.err":"Could not send. Please call +34 986 908 114 or try again.",
-    "form.name":"Name","form.phone":"Phone","form.email":"Email","form.msg":"What do you need?",
-    "form.msgph":"Tell us briefly what you need…",
-    "form.send":"Send","form.privacy":"By sending this you agree that we may use your details only to reply to you.",
+    "contact.lead":"Send us an email or call either of our two centres. We'll get back to you as soon as we can.",
     "contact.or":"Or get in touch directly:",
     "direct.loc1":"Baión — Vilanova de Arousa","direct.loc2":"Trabanca Badiña — Vilagarcía de Arousa",
-    "direct.ig":"Instagram",
+    "direct.ig":"Instagram","direct.mail":"Send us an email",
     "footer.tag":"Gardening and landscaping since 1994","footer.rights":"All rights reserved."
   }
 };
@@ -903,12 +852,6 @@ function setLang(lang,{persist = true,explicit = true} = {}){
   const og = document.querySelector('meta[property="og:locale"]');
   if(og) og.setAttribute('content',LOCALES[lang] || 'es_ES');
 
-  /* Only a deliberate ?lang= URL gets its own canonical; the bare URL stays
-     the canonical Spanish page so the three variants don't compete. */
-  const url = explicit && lang !== 'es' ? BASE + '?lang=' + lang : BASE;
-  document.getElementById('canonical').setAttribute('href',url);
-  document.getElementById('ogurl').setAttribute('content',url);
-
   document.querySelectorAll('.langs button').forEach(b=>{
     b.setAttribute('aria-current',String(b.dataset.lang === lang));
   });
@@ -916,11 +859,29 @@ function setLang(lang,{persist = true,explicit = true} = {}){
   if(persist){ try{ localStorage.setItem('troquina-lang',lang); }catch(e){} }
 }
 
+const PATHS = {es:'/', gl:'/gl/', en:'/en/'};
+
+/* Each language is a real pre-rendered page, so switching navigates there.
+   That keeps the URL, the served HTML and <html lang> in agreement — which is
+   what search engines and the browser's own language handling rely on. */
 document.querySelectorAll('.langs button').forEach(btn=>{
-  btn.addEventListener('click',()=>setLang(btn.dataset.lang));
+  btn.addEventListener('click',()=>{
+    const lang = btn.dataset.lang;
+    try{ localStorage.setItem('troquina-lang',lang); }catch(e){}
+    if(lang !== document.documentElement.lang) location.assign(PATHS[lang]);
+  });
 });
-const initial = detectLang();
-setLang(initial.lang,{persist:false,explicit:initial.explicit});
+
+/* This document was rendered in a specific language at build time. Honour it
+   rather than repainting, and never auto-redirect: a visitor who asked for a
+   URL gets that URL, and crawlers see stable content per URL. */
+const prerendered = document.body.dataset.prerendered;
+if(prerendered){
+  setLang(prerendered,{persist:false,explicit:true});
+}else{
+  const initial = detectLang();
+  setLang(initial.lang,{persist:false,explicit:initial.explicit});
+}
 
 /* ---------- nav: scrolled state, mobile menu, active section ---------- */
 const nav = document.getElementById('nav');
@@ -967,38 +928,6 @@ if('IntersectionObserver' in window){
     });
   },{rootMargin:'-45% 0px -50% 0px'});
   links.forEach((_,id)=>{ const s = document.getElementById(id); if(s) spy.observe(s); });
-}
-
-/* ---------- contact form ---------- */
-const form = document.getElementById('contact-form');
-if(form){
-  const status = document.getElementById('form-status');
-  const say = (key,cls)=>{
-    const dict = I18N[document.documentElement.lang] || I18N.es;
-    status.textContent = dict[key] || '';
-    status.className = 'form-status ' + cls;
-    status.hidden = false;
-  };
-  form.addEventListener('submit',async e=>{
-    e.preventDefault();
-    const btn = form.querySelector('button[type=submit]');
-    btn.disabled = true;
-    say('form.sending','');
-    try{
-      const res = await fetch(form.action,{
-        method:'POST',
-        headers:{'accept':'application/json'},
-        body:new FormData(form),
-      });
-      if(!res.ok) throw new Error('http '+res.status);
-      form.reset();
-      say('form.ok','ok');
-    }catch(err){
-      say('form.err','err');
-    }finally{
-      btn.disabled = false;
-    }
-  });
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();

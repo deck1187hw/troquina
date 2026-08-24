@@ -82,6 +82,46 @@ if (/data-netlify|netlify-honeypot/.test(html))
   fail('index.html still contains Netlify form attributes (site is on Cloudflare Pages)');
 else pass('no stale Netlify form wiring');
 
+// --- pre-rendered language pages -----------------------------------------
+if (fs.existsSync('dist/index.html')) {
+  const EXPECT = {
+    'dist/index.html':    { lang: 'es', canon: 'https://www.xn--troquia-9za.com/' },
+    'dist/gl/index.html': { lang: 'gl', canon: 'https://www.xn--troquia-9za.com/gl/' },
+    'dist/en/index.html': { lang: 'en', canon: 'https://www.xn--troquia-9za.com/en/' },
+  };
+  const titles = new Set(), h1s = new Set();
+  for (const [file, want] of Object.entries(EXPECT)) {
+    if (!fs.existsSync(file)) { fail(`prerender: ${file} missing`); continue; }
+    const doc = fs.readFileSync(file, 'utf8');
+    const lang = (doc.match(/<html lang="([^"]+)"/) || [])[1];
+    if (lang !== want.lang) fail(`prerender: ${file} has lang="${lang}", expected "${want.lang}"`);
+    const canon = (doc.match(/rel="canonical" href="([^"]+)"/) || [])[1];
+    if (canon !== want.canon) fail(`prerender: ${file} canonical is ${canon}, expected ${want.canon}`);
+    titles.add((doc.match(/<title>([\s\S]*?)<\/title>/) || [])[1]);
+    h1s.add((doc.match(/<h1[^>]*>([^<]*)<\/h1>/) || [])[1]);
+    // every hreflang must be present on every page
+    for (const hl of ['es', 'gl', 'en', 'x-default'])
+      if (!doc.includes(`hreflang="${hl}"`)) fail(`prerender: ${file} missing hreflang="${hl}"`);
+    // subdirectory pages must not use relative asset paths
+    if (file.includes('/gl/') || file.includes('/en/')) {
+      const rel = [...doc.matchAll(/\s(?:src|href)="(?!https?:|data:|mailto:|tel:|#|\/)([^"]+)"/g)].map(m => m[1]);
+      if (rel.length) fail(`prerender: ${file} has relative asset paths that 404 from a subdirectory: ${rel.slice(0,3)}`);
+      // every candidate in every srcset/imagesrcset must be root-relative too
+      for (const m of doc.matchAll(/\s(?:image)?srcset="([^"]+)"/g))
+        for (const cand of m[1].split(',')) {
+          const url = cand.trim().split(/\s+/)[0];
+          if (url && !/^(https?:|data:|\/)/.test(url))
+            fail(`prerender: ${file} srcset candidate "${url}" is relative and will 404`);
+        }
+    }
+  }
+  if (titles.size !== 3) fail(`prerender: expected 3 distinct titles, got ${titles.size}`);
+  if (h1s.size !== 3) fail(`prerender: expected 3 distinct h1 headings, got ${h1s.size}`);
+  if (!failures) pass('pre-rendered pages: 3 languages, distinct titles/h1, correct canonicals and hreflang');
+} else {
+  console.log('  --   dist/ not built; skipping pre-render checks (run npm run build first)');
+}
+
 console.log();
 if (failures) { console.error(`${failures} check(s) failed`); process.exit(1); }
 console.log('all static checks passed');
