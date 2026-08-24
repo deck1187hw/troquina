@@ -1,0 +1,86 @@
+name: CI / Deploy
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  # Never let two deploys race; cancel superseded PR runs but not production.
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Static checks
+        run: npm run test
+
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+
+      - name: Serve site
+        run: |
+          cd dist && python3 -m http.server 8000 &
+          npx --yes wait-on http://localhost:8000/index.html --timeout 30000
+
+      - name: Browser checks
+        run: npm run test:browser
+
+  deploy:
+    name: Deploy to Cloudflare Pages
+    needs: test
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      deployments: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Publish
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy dist --project-name=troquina --branch=main
+
+      - name: Verify the deploy is actually live
+        run: |
+          set -e
+          for i in $(seq 1 20); do
+            body=$(curl -sS -m 20 -L https://www.xn--troquia-9za.com/ || true)
+            if printf '%s' "$body" | grep -q 'Jardines que crecen'; then
+              echo "live and serving the current site"; exit 0
+            fi
+            echo "attempt $i: not live yet, waiting..."; sleep 15
+          done
+          echo "::error::Site did not go live within 5 minutes"; exit 1

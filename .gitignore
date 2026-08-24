@@ -48,3 +48,6 @@ tmp*
 
 # wrangler local cache
 /.wrangler
+
+# build output
+/dist

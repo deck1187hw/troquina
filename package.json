@@ -1,0 +1,21 @@
+{
+  "name": "troquina-web",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Single-page trilingual site for Troqui\u00f1a S.L.",
+  "type": "module",
+  "scripts": {
+    "build": "node tools/build.mjs",
+    "serve": "npm run build && cd dist && python3 -m http.server 8000",
+    "test": "node tests/validate.mjs",
+    "test:browser": "node tests/browser.mjs",
+    "test:all": "npm run test && npm run test:browser",
+    "images": "node tools/optimise-images.mjs",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=troquina --branch=main"
+  },
+  "devDependencies": {
+    "playwright": "^1.49.0",
+    "sharp": "^0.33.5",
+    "wrangler": "^4.0.0"
+  }
+}

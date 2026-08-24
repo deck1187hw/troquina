@@ -305,6 +305,9 @@ section{scroll-margin-top:76px}
 .field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.45)}
 .field input:focus,.field textarea:focus{background:rgba(255,255,255,.12);border-color:var(--sage)}
 .form-note{font-size:.8rem;color:rgba(255,255,255,.55);max-width:46ch}
+.form-status{font-size:.92rem;font-weight:500;margin-top:.4rem;padding:.75rem 1rem;border-radius:12px;max-width:46ch}
+.form-status.ok{background:rgba(143,169,142,.18);border:1px solid var(--sage);color:#EAF3E9}
+.form-status.err{background:rgba(193,80,46,.16);border:1px solid var(--clay);color:#FBDDD2}
 .hp{position:absolute;left:-9999px}
 .direct{display:grid;gap:.9rem;align-content:start}
 .direct a{
@@ -551,8 +554,7 @@ section{scroll-margin-top:76px}
       <h2 class="h2" data-i18n="contact.title">¿Hablamos de tu jardín?</h2>
       <p class="lead" data-i18n="contact.lead">Cuéntanos qué necesitas y te respondemos lo antes posible.</p>
 
-      <form class="form" name="contacto" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="margin-top:2rem">
-        <input type="hidden" name="form-name" value="contacto">
+      <form class="form" id="contact-form" name="contacto" method="POST" action="/api/contact" style="margin-top:2rem">
         <p class="hp"><label>Bot field <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
         <div class="row">
           <p class="field" style="margin:0">
@@ -574,6 +576,7 @@ section{scroll-margin-top:76px}
         </p>
         <p style="margin:0"><button class="btn btn-primary" type="submit" data-i18n="form.send">Enviar</button></p>
         <p class="form-note" data-i18n="form.privacy">Al enviar aceptas que usemos tus datos únicamente para responderte.</p>
+        <p class="form-status" id="form-status" role="status" aria-live="polite" hidden></p>
       </form>
     </div>
 
@@ -746,6 +749,7 @@ const I18N = {
     "loc.map":"Cómo llegar","loc.call":"Llamar",
     "contact.eyebrow":"Contacto","contact.title":"¿Hablamos de tu jardín?",
     "contact.lead":"Cuéntanos qué necesitas y te respondemos lo antes posible.",
+    "form.sending":"Enviando…","form.ok":"Mensaje enviado. Te responderemos lo antes posible.","form.err":"No se pudo enviar. Llámanos al 986 908 114 o inténtalo de nuevo.",
     "form.name":"Nombre","form.phone":"Teléfono","form.email":"Email","form.msg":"¿Qué necesitas?",
     "form.msgph":"Cuéntanos brevemente qué necesitas…",
     "form.send":"Enviar","form.privacy":"Al enviar aceptas que usemos tus datos únicamente para responderte.",
@@ -795,6 +799,7 @@ const I18N = {
     "loc.map":"Como chegar","loc.call":"Chamar",
     "contact.eyebrow":"Contacto","contact.title":"Falamos do teu xardín?",
     "contact.lead":"Cóntanos que precisas e respondémosche o antes posible.",
+    "form.sending":"Enviando…","form.ok":"Mensaxe enviada. Responderémosche o antes posible.","form.err":"Non se puido enviar. Chámanos ao 986 908 114 ou téntao de novo.",
     "form.name":"Nome","form.phone":"Teléfono","form.email":"Email","form.msg":"Que precisas?",
     "form.msgph":"Cóntanos brevemente que precisas…",
     "form.send":"Enviar","form.privacy":"Ao enviar aceptas que usemos os teus datos unicamente para responderche.",
@@ -844,6 +849,7 @@ const I18N = {
     "loc.map":"Directions","loc.call":"Call",
     "contact.eyebrow":"Contact","contact.title":"Let's talk about your garden",
     "contact.lead":"Tell us what you need and we'll get back to you as soon as we can.",
+    "form.sending":"Sending…","form.ok":"Message sent. We'll get back to you as soon as we can.","form.err":"Could not send. Please call +34 986 908 114 or try again.",
     "form.name":"Name","form.phone":"Phone","form.email":"Email","form.msg":"What do you need?",
     "form.msgph":"Tell us briefly what you need…",
     "form.send":"Send","form.privacy":"By sending this you agree that we may use your details only to reply to you.",
@@ -961,6 +967,38 @@ if('IntersectionObserver' in window){
     });
   },{rootMargin:'-45% 0px -50% 0px'});
   links.forEach((_,id)=>{ const s = document.getElementById(id); if(s) spy.observe(s); });
+}
+
+/* ---------- contact form ---------- */
+const form = document.getElementById('contact-form');
+if(form){
+  const status = document.getElementById('form-status');
+  const say = (key,cls)=>{
+    const dict = I18N[document.documentElement.lang] || I18N.es;
+    status.textContent = dict[key] || '';
+    status.className = 'form-status ' + cls;
+    status.hidden = false;
+  };
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const btn = form.querySelector('button[type=submit]');
+    btn.disabled = true;
+    say('form.sending','');
+    try{
+      const res = await fetch(form.action,{
+        method:'POST',
+        headers:{'accept':'application/json'},
+        body:new FormData(form),
+      });
+      if(!res.ok) throw new Error('http '+res.status);
+      form.reset();
+      say('form.ok','ok');
+    }catch(err){
+      say('form.err','err');
+    }finally{
+      btn.disabled = false;
+    }
+  });
 }
 
 document.getElementById('year').textContent = new Date().getFullYear();
